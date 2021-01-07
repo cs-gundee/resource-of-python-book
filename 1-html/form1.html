@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Форм</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <input type="text" placeholder="Таны нэр" name="name">
+                <input type="password" placeholder="Нууц үг" name="password">
+            </div>
+
+            <div>
+                <input name="color" type="radio" value="red"> Улаан
+                <input name="color" type="radio" value="green"> Ногоон
+                <input name="color" type="radio" value="yellow"> Шар
+            </div>
+
+            <div>
+                <input name="district" list="districts" placeholder="УБ хотын дүүргүүд">
+                <datalist id="districts">
+                    <option value="Багануур дүүрэг">
+                    <option value="Багахангай дүүрэг">
+                    <option value="Баянгол дүүрэг">
+                    <option value="Баянзүрх дүүрэг">
+                    <option value="Налайх дүүрэг">
+                    <option value="Сонгинохайрхан дүүрэг">
+                    <option value="Сүхбаатар дүүрэг">
+                    <option value="Хан-Уул дүүрэг">
+                    <option value="Чингэлтэй дүүрэг">
+                </datalist>
+            </div>           
+        </form>
+    </body>
+</html>
