@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Өнөөдөр наадмын баярын өдөр үү?</title>
+        <link href="{% static 'naadam/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        {% if naadam %}
+            <h1>ТИЙМ</h1>
+        {% else %}
+            <h1>ҮГҮЙ</h1>
+        {% endif %}
+    </body>
+</html>

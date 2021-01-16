@@ -1,0 +1,34 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h1>Хийх зүйлсийн жагсаалт</h1>
+    <ul>
+        {% for task in tasks%}
+            <li>{{task}}</li>
+        {% empty %}
+            <li>Ажлын жагсаалт хоосон байна.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tasks:add' %}">Шинэ зүйл нэмэх</a>
+{% endblock %}
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Хийх зүйлс</title>
+    </head>
+    <body>
+        <h1>Хийх зүйлсийн жагсаалт</h1>
+        <ul>
+            {% for task in tasks%}
+                <li>{{task}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html> 
+
+-->
