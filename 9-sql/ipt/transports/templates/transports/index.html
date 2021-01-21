@@ -1,0 +1,10 @@
+{% extends "transports/layout.html" %}
+
+{% block body %}
+    <h1>Зорчих чиглэлүүд:</h1>
+    <ul>
+        {% for trans in transports %}            
+            <li><a href="{% url 'a_transport' trans.id %}">Чиглэл {{ trans.id }}</a>. {{ trans.origin }} -с {{ trans.destination }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

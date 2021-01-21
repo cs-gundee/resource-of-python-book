@@ -22,3 +22,4 @@ student1 = Student("Болор", "Хишиг", "SW202101")
 student2 = Student("Од", "Заяа", "SW202102")
 print(f"{student1.getName()} таны оюутны код {student1.getCode()}")       
 # Хишиг-н Болор таны оюутны код SW202101
+

@@ -1,0 +1,32 @@
+{% extends "transports/layout.html" %}
+
+{% block body %}
+    <h1>Чиглэл {{ a_trans.id }}</h1>
+    <ul>
+        <li>Эхлэх газар: {{ a_trans.origin }}</li>
+        <li>Хүрэх газар: {{ a_trans.destination }}</li>
+        <li>Хоорондын зай: {{ a_trans.distance }} км</li>
+    </ul>
+
+    <h2>Зорчигчид:</h2>
+    <ul>
+        {% for passenger in passengers %}
+            <li>{{ passenger }}</li>
+        {% empty %}
+            <li>Энэ чиглэлд зорчигч бүртгэгдээгүй байна.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Зорчигч нэмэх</h2>
+    <form action="{% url 'book' a_trans.id%}" method="POST">
+        {% csrf_token %}
+        <select name="passenger">
+            {% for passenger in non_passengers %}
+            <option value="{{ passenger.id }}">{{ passenger }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+
+    <a href="{% url 'index' %}">Бүх чиглэлийн жагсаалт руу буцах</a>
+{% endblock %}
