@@ -1,0 +1,30 @@
+button {
+    height: 35px;
+    width: 100px;
+}
+
+/*
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+*/
+
+[data-color="red"] {
+    background-color: red;
+}
+
+[data-color="yellow"] {
+    background-color: yellow;
+}
+
+[data-color="green"] {
+    background-color: green;
+}
