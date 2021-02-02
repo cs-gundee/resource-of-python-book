@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <title>Анхны React апп</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+        
+        class App extends React.Component {
+            render() {
+                return (
+                    /*
+                    <div>
+                       <h1>Сайн байна уу?</h1>
+                        Энэ өдрийн мэндийг хүргэе!
+                    </div> 
+                    */
+                     
+                    <div>
+                        <Greeting name="Батаа" />
+                        <Greeting name="Билгүүн" />
+                    </div>
+                );
+            }
+        }
+
+        class Greeting extends React.Component {
+            render() {
+                return (
+                        <h2>Сайн уу? {this.props.name} </h2>
+                );
+            }
+        }
+
+        ReactDOM.render(<App />, document.querySelector('#app'));
+
+        </script>
+    </body>
+</html>

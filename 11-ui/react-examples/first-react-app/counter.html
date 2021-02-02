@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <title>Анхны React апп</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+        
+        class App extends React.Component {
+
+            constructor(props) {
+            super(props);
+            this.state = {
+                count: 0
+            };
+            }
+
+            render() {
+            return (
+                <div>
+                    <h1>{this.state.count}</h1>
+                    <button onClick={this.count}>Тоолох</button>
+                    <p>count хувьсагчийн утга: {this.state.count}</p>
+                </div>
+            );
+            }
+
+            count = () => {
+            this.setState(state => ({
+                count: state.count + 1
+            }));
+            }
+            }
+
+            ReactDOM.render(<App />, document.querySelector("#app"));
+
+        </script>
+    </body>
+</html>

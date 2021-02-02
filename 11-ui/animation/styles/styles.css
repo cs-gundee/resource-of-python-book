@@ -1,0 +1,75 @@
+@keyframes grow {
+    from {
+        font-size: 10px;
+    }
+
+    to {
+        font-size: 60px;
+    }
+}
+
+h1 {
+    animation-name: grow;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: 50%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+h1 {
+    position: relative;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+
+
+/* 
+@keyframes animation-name {
+    from {
+        // Эхлэлийн загвар
+    }
+
+    to {
+        // Төгсгөлийн загвар
+    }
+}
+
+@keyframes animation_name {
+    0% {
+        // Эхлэлийн загвар 
+    }
+
+    75% {
+        // 3/4 хугацаанд хэлбэржих загвар
+    }
+
+    100% {
+        // Төгсгөлийн загвар
+    }
+}
+*/

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <title>Нэмэх үйлдэл шалгах бяцхан тоглоом</title>
+
+        <style>
+            #app {
+                text-align: center;
+                font-family: sans-serif;
+            }
+
+            #bodlogo {
+                font-size: 80px;
+            }
+
+            #winner {
+                font-size: 80px;
+                color: blueviolet;
+                padding-top: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+        
+    class App extends React.Component {
+
+        constructor(props) {
+        super(props);
+        this.state = {  
+            number1: 1,
+            number2: 1,       
+            score: 0,
+            response: ""             
+        };
+        }
+
+        render() {
+            if(this.state.score === 10) {
+            return (
+                <div id="winner">Баяр хүргэе!<br />Та хожлоо.</div>
+            );
+            }
+
+            return (
+                <div>
+                    {/*Тайлбар үлдээх*/}
+                    {/*<div>1 + 1</div>*/}
+                    <div id="bodlogo">{this.state.number1} + {this.state.number2}</div>
+                    <input onKeyPress={this.inputKeyPress} onChange={this.updateResponse} value= {this.state.response} />
+                    <div>Оноо: {this.state.score}</div>
+                    {/*<div>Оролтын талбарт бичсэн зүйл: {this.state.response}</div>*/}
+                </div>
+            );
+        }
+
+        updateResponse = (event) => {
+            this.setState({
+            response: event.target.value
+        });
+        }
+
+        inputKeyPress = (event) => {
+            if(event.key === 'Enter') {
+                const answer = parseInt(this.state.response);
+                if(answer === this.state.number1 + this.state.number2) {
+                    // хэрэглэгч зөв хариулсан
+                    this.setState(state => ({
+                        score: state.score + 1,
+                        number1: Math.ceil(Math.random() * 20),
+                        number2: Math.ceil(Math.random() * 20),
+                        response: ""
+                    }));
+                } else {
+                    // хэрэглэгч буруу хариулсан
+                    this.setState(state => ({
+                        score: state.score - 1,
+                        response: ""
+                    }));
+                }
+            }
+        }
+
+
+        }
+
+            ReactDOM.render(<App />, document.querySelector("#app"));
+
+        </script>
+    </body>
+</html>
