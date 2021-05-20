@@ -11,7 +11,7 @@ def file_uri(filename):
 # Веб драйверт Google Chrome -г тохируулах
 # driver = webdriver.Chrome()
 
-driver = webdriver.Chrome('C:/Users/lustr/Downloads/chromedriver_win32/chromedriver.exe')
+driver = webdriver.Chrome('C:/Users/.../Downloads/chromedriver_win32/chromedriver.exe')
 
 class WebpageTests(unittest.TestCase):
     def test_title(self):
